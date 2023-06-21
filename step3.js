@@ -25,7 +25,7 @@ if (path.slice(0, 4) === http) {
 
 function writeOutput(out,pathOrData) {
     if (out) {
-      fs.writeFile(out, pathOrData, uft8, function(error) {
+      fs.writeFile(out, pathOrData, uft8, (error) =>{
         if (error) {
             console.error(`Failed to write ${out}: ${error}`);
             process.exit(1);
@@ -37,12 +37,12 @@ function writeOutput(out,pathOrData) {
 
 
 function cat(out,path){
-fs.readFile(path, uft8, function(error, data) {
+fs.readFile(path, uft8, (error, data)=> {
     if (error){
         console.error(`Failed to read: ${error}`);
         process.kill(1);
     }
-    writeOutput(out,path)
+    writeOutput(out,data)
  });
 }
 

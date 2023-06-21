@@ -7,7 +7,7 @@ const http = 'http';
 
 
 function cat(path){
-fs.readFile(path, uft8, function(error, data) {
+fs.readFile(path, uft8, (error, data)=> {
     if (error){
         console.error(`Failed to read: ${error}`);
         process.kill(1);
